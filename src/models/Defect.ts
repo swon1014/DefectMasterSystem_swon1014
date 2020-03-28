@@ -13,4 +13,3 @@ export interface Action {
     subject: string;
     content: string;
 }
-

@@ -46,7 +46,7 @@
 
                         </div>
                         <div class="collapse" :id="'collapse_' + action.Id">
-                            <pre class="card card-body" v-html="action.content">
+                            <pre class="card card-body action_content" v-html="action.content">
                             </pre>
                         </div>
                     </div>
@@ -58,14 +58,13 @@
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
-    import ExampleComponent from '@/components/ExampleComponent.vue';
     import Selector from '../components/Selector.vue';
     import { Defect, Action } from '../models/Defect';
     import PapaParse from 'papaparse';
 
     @Component({
         name: 'home',
-        components: {ExampleComponent, Selector},
+        components: {Selector},
     })
     export default class Home extends Vue {
         private defects: Defect[] = [];
@@ -235,6 +234,10 @@
 #lookup {
     margin-top: 26px;
     width: 70%;
+}
+
+.action_content {
+    text-align: left;
 }
 
 </style>

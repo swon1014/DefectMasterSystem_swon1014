@@ -2,7 +2,7 @@
 	<div id="app">
         <div class="header" style="height: 80px;"> </div>
         <div class="header" style="height: 130px;">
-            <h1> 해결법을 찾아줄게  </h1>
+            <h1> Defect Master System </h1>
         </div>
 		<component :is="layout">
 			<router-view/>
