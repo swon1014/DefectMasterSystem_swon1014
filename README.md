@@ -14,10 +14,8 @@ https://github.com/phynalle/defect-master-system.git
 ## Update
 `Update.bat`을 실행하면 자동으로 업데이트 된다
 
-```
 :warning: **data.csv와 images/ 를 편집할 때 주의해야할 점**:
 업데이트를 하면 dist/ 디렉토리가 삭제됐다가 다시 생성된다. 그래서 절대 `dist/` 에서 수정하지 말고 `public/` 에서 수정해야 한다.
-```
 
 ## 실행하기
 `Run.bat`을 실행하면 `dist/` 디렉토리를 기준으로 웹서버가 실행된다.
