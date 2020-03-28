@@ -1,47 +1,27 @@
-# Vue.js Boilerplate, Typescript, Vuex, Vue-Router, Element-UI, i18n, axios, Font Awesome
-
-A typescript boilerplate for Vue.js with Vue CLI 3.x that uses:
-- vuex
-- vue-router
-- Element-UI
-- i18n
-- axios
-- Font Awesome
-- ...
-
 ## Requirements
 - Node.js (npm)
+- Git
+- Python 3+
 
 
 ## Installation
-1. Install Vue CLI 3.x
-    ```
-    npm install -g @vue/cli
-    # OR
-    yarn global add @vue/cli
-    ```
-    
-2. Install the dependencies
-    ```
-    npm install
-    # OR
-    yarn install
-    ```
-    
-## Architecture
-This is the way I personally structure Vue.js projects. Feel free to modify it to fit your needs.
-- :file_folder: `assets`: Contains all assets such as images or sound files.
-- :file_folder: `components`: Contains all `Vue` components.
-- :file_folder: `layouts`: Contains all `Vue`-Layouts that can be set in the `vue-router`.
-- :file_folder: `models`: Contains all models needed for the business logic.
-- :file_folder: `requests`: Contains all requests needed for communicating with the API.
-- :file_folder: `rules`: Contains all reusable validation rules.
-- :file_folder: `services`: Contains all services that fulfill web-requests.
-- :file_folder: `store`: Contains all modules that are being used by the `vuex`-store.
-- :file_folder: `style`: Contains all stylesheets.
-- :file_folder: `translations`: Contains all translations as `.ts` files.
-- :file_folder: `views`: Contains all views that are being used in the `vue-router`.
+1. 이 Repository를 원하는 디렉토리에 클론한다
+```
+https://github.com/phynalle/defect-master-system.git
+```
+2. `setup.bat`을 실행한다
 
+## Update
+`Update.bat`을 실행하면 자동으로 업데이트 된다
+
+```
+:warning: **data.csv와 images/ 를 편집할 때 주의해야할 점**:
+업데이트를 하면 dist/ 디렉토리가 삭제됐다가 다시 생성된다. 그래서 절대 `dist/` 에서 수정하지 말고 `public/` 에서 수정해야 한다.
+```
+
+## 실행하기
+`Run.bat`을 실행하면 `dist/` 디렉토리를 기준으로 웹서버가 실행된다.
+`http://자기아이피`로 접속할 수 있다.
 
 ## Commands
 ### Compiles and hot-reloads for development
