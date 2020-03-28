@@ -16,7 +16,8 @@ https://github.com/phynalle/defect-master-system.git
 
 :warning: **data.csv와 images/ 를 편집할 때 주의해야할 점**
 ```
-업데이트를 하면 `dist/` 디렉토리가 삭제됐다가 다시 생성된다. 그래서 절대 `dist/` 에서 수정하지 말고 `public/` 에서 수정해야 한다.
+업데이트를 하면 `dist/` 디렉토리가 삭제됐다가 `public/`에 있는 파일들이 복사되면서 다시 생성된다.
+그래서 절대 `dist/` 에서 수정하지 말고 `public/` 에서 수정해야 한다.
 ```
 
 ## 실행하기
