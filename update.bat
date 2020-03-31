@@ -1,3 +1,3 @@
 git pull origin master -f
-npm install
-npm run-script build
+call npm install
+call npm run-script build
