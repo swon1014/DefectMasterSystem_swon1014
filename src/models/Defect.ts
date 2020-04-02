@@ -1,6 +1,6 @@
 export interface Defect {
     area: string;
-    brand: string;
+    band: string;
     process: string;
     type: string;
     style: string;
