@@ -3,6 +3,7 @@
         <div class="header" style="height: 80px;"> </div>
         <div class="header" style="height: 130px;">
             <h1> Defect Master System </h1>
+	    <div class="header" style="height: 40px;"><h2> DMS v1.0 문의 - 김성원(2068048) </h2></div></div>
         </div>
 		<component :is="layout">
 			<router-view/>
