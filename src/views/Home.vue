@@ -11,7 +11,7 @@
                     <Selector :label="'Area'" :items="filteredFields.area" :selected="filter.area" @change="filterArea"/>
                 </div>
                 <div class="select">
-                    <label> band </label>
+                    <label> Band </label>
                     <Selector :label="'Band'" :items="filteredFields.band" :selected="filter.band" @change="filterband"/>
                 </div>
                 <div class="select">
