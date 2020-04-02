@@ -11,8 +11,8 @@
                     <Selector :label="'Area'" :items="filteredFields.area" :selected="filter.area" @change="filterArea"/>
                 </div>
                 <div class="select">
-                    <label> Brand </label>
-                    <Selector :label="'Brand'" :items="filteredFields.brand" :selected="filter.brand" @change="filterBrand"/>
+                    <label> band </label>
+                    <Selector :label="'Band'" :items="filteredFields.band" :selected="filter.band" @change="filterband"/>
                 </div>
                 <div class="select">
                     <label> Process </label>
@@ -71,7 +71,7 @@
         private filteredDefects: Defect[] = [];
         private filter = {
             area: 'all',
-            brand: 'all',
+            band: 'all',
             process: 'all',
             type: 'all',
             style: 'all',
@@ -82,8 +82,8 @@
             this.filter.area = val;
         }
 
-        private filterBrand(val: string) {
-            this.filter.brand = val;
+        private filterBand(val: string) {
+            this.filter.band = val;
         }
 
         private filterProcess(val: string) {
@@ -109,7 +109,7 @@
         private resetFilter() {
             this.filter = {
                 area: 'all',
-                brand: 'all',
+                band: 'all',
                 process: 'all',
                 type: 'all',
                 style: 'all',
@@ -124,7 +124,7 @@
         private get filteredFields() {
             const fields = {
                 area: new Set<string>(),
-                brand: new Set<string>(),
+                band: new Set<string>(),
                 process: new Set<string>(),
                 type: new Set<string>(),
                 style: new Set<string>(),
@@ -133,13 +133,13 @@
             };
             for (const defect of this.defects) {
                 if (this.isFiltered(defect.area, this.filter.area) &&
-                    this.isFiltered(defect.brand, this.filter.brand) &&
+                    this.isFiltered(defect.band, this.filter.band) &&
                     this.isFiltered(defect.process, this.filter.process) &&
                     this.isFiltered(defect.type, this.filter.type) &&
                     this.isFiltered(defect.style, this.filter.style) &&
                     this.isFiltered(defect.map, this.filter.map)) {
                         fields.area.add(defect.area);
-                        fields.brand.add(defect.brand);
+                        fields.band.add(defect.band);
                         fields.process.add(defect.process);
                         fields.type.add(defect.type);
                         fields.style.add(defect.style);
@@ -182,7 +182,7 @@
 
                     this.defects.push({
                         area: row[0],
-                        brand: row[1],
+                        band: row[1],
                         process: row[2],
                         type: row[3],
                         style: row[4],
