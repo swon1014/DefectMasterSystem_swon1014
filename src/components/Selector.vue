@@ -7,12 +7,19 @@
             </button>
             <div class="dropdown-menu">
                 <a class="dropdown-item" :class="{'active': 'all' === selected }" href="#" name="all" @click="onSelectionChanged">all</a>
-                <div v-for="item in items" :key="item">
-                    <a class="dropdown-item" :class="{'active': item === selected }" href="#" :name="item"  @click="onSelectionChanged">
-                       <img v-if="showImage" :src="`/images/${item}`" />
-                       <span v-else v-text="item"> 
-                       </span>
-                    </a>
+                <div class="imageGrid" v-if="showImage">
+                    <div class="imageCell" v-for="item in items" :key="item">
+                        <a class="dropdown-item" :class="{'active': item === selected }" href="#" :name="item"  @click="onSelectionChanged">
+                        <img :src="`/images/${item}`" />
+                        </a>
+                    </div>
+                </div>
+                <div v-else>
+                    <div v-for="item in items" :key="item">
+                        <a class="dropdown-item" :class="{'active': item === selected }" href="#" :name="item"  @click="onSelectionChanged">
+                        <span v-text="item"></span>
+                        </a>
+                    </div>
                 </div>
 
             </div>
@@ -45,6 +52,14 @@
  button {
      margin: 0;
      width: 100%;
+ }
+ 
+ .imageGrid {
+     width: 80vw;
+ }
+
+ .imageCell {
+     display: inline-flex;
  }
 
 </style>
