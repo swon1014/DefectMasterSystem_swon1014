@@ -12,7 +12,7 @@
                 </div>
                 <div class="select">
                     <label> Band </label>
-                    <Selector :label="'Band'" :items="filteredFields.band" :selected="filter.band" @change="filterband"/>
+                    <Selector :label="'Band'" :items="filteredFields.band" :selected="filter.band" @change="filterBand"/>
                 </div>
                 <div class="select">
                     <label> Process </label>
