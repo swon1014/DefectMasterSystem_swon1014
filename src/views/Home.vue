@@ -7,6 +7,10 @@
                 </button>
 
                 <div class="select">
+                    <label> Fab </label>
+                    <Selector :label="'Area'" :items="filteredFields.fab" :selected="filter.fab" @change="filterFab"/>
+                </div>
+                <div class="select">
                     <label> Area </label>
                     <Selector :label="'Area'" :items="filteredFields.area" :selected="filter.area" @change="filterArea"/>
                 </div>
@@ -17,6 +21,10 @@
                 <div class="select">
                     <label> Process </label>
                     <Selector :label="'Process'" :items="filteredFields.process" :selected="filter.process" @change="filterProcess"/>
+                </div>
+                <div class="select">
+                    <label> Chamber </label>
+                    <Selector :label="'Process'" :items="filteredFields.chamber" :selected="filter.chamber" @change="filterChamber"/>
                 </div>
                 <div class="select">
                     <label> Defect Type </label>
@@ -70,13 +78,19 @@
         private defects: Defect[] = [];
         private filteredDefects: Defect[] = [];
         private filter = {
+            fab: 'all',
             area: 'all',
             band: 'all',
             process: 'all',
+            chamber: 'all',
             type: 'all',
             style: 'all',
             map: 'all',
         };
+
+        private filterFab(val: string) {
+            this.filter.fab = val;
+        }
 
         private filterArea(val: string) {
             this.filter.area = val;
@@ -88,6 +102,10 @@
 
         private filterProcess(val: string) {
             this.filter.process = val;
+        }
+
+        private filterChamber(val: string) {
+            this.filter.chamber = val;
         }
 
         private filterType(val: string) {
@@ -108,9 +126,11 @@
 
         private resetFilter() {
             this.filter = {
+                fab: 'all',
                 area: 'all',
                 band: 'all',
                 process: 'all',
+                chamber: 'all',
                 type: 'all',
                 style: 'all',
                 map: 'all',
@@ -123,24 +143,30 @@
 
         private get filteredFields() {
             const fields = {
+                fab: new Set<string>(),
                 area: new Set<string>(),
                 band: new Set<string>(),
                 process: new Set<string>(),
+                chamber: new Set<string>(),
                 type: new Set<string>(),
                 style: new Set<string>(),
                 map: new Set<string>(),
                 defects: new Array<Defect>(),
             };
             for (const defect of this.defects) {
-                if (this.isFiltered(defect.area, this.filter.area) &&
+                if (this.isFiltered(defect.fab, this.filter.fab) &&
+                    this.isFiltered(defect.area, this.filter.area) &&
                     this.isFiltered(defect.band, this.filter.band) &&
                     this.isFiltered(defect.process, this.filter.process) &&
+                    this.isFiltered(defect.chamber, this.filter.chamber) &&
                     this.isFiltered(defect.type, this.filter.type) &&
                     this.isFiltered(defect.style, this.filter.style) &&
                     this.isFiltered(defect.map, this.filter.map)) {
+                        fields.fab.add(defect.fab);
                         fields.area.add(defect.area);
                         fields.band.add(defect.band);
                         fields.process.add(defect.process);
+                        fields.chamber.add(defect.chamber);
                         fields.type.add(defect.type);
                         fields.style.add(defect.style);
                         fields.map.add(defect.map);
@@ -165,7 +191,7 @@
                     }
 
                     const actions: Action[] = [];
-                    for (let j = 6; j < row.length; j++) {
+                    for (let j = 8; j < row.length; j++) {
                         const action = row[j];
                         if (!action || action.length === 0) {
                             continue;
@@ -181,12 +207,14 @@
                     }
 
                     this.defects.push({
-                        area: row[0],
-                        band: row[1],
-                        process: row[2],
-                        type: row[3],
-                        style: row[4],
-                        map: row[5],
+                        fab: row[0],
+                        area: row[1],
+                        band: row[2],
+                        process: row[3],
+                        chamber: row[4],
+                        type: row[5],
+                        style: row[6],
+                        map: row[7],
                         actions,
                     });
                 }
