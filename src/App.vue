@@ -51,6 +51,6 @@
 
     h1 {
         color: whitesmoke;
-        font-size: 4.5em;
+        font-size: 2.5em;
     }
 </style>
