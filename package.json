@@ -18,7 +18,7 @@
     "axios": "^0.18.0",
     "element-ui": "^2.6.1",
     "node-sass": "^4.14.1",
-    "papaparse": "^5.1.1",
+    "papaparse": "^5.2.0",
     "purecss": "^1.0.1",
     "semantic-ui-vue": "^0.10.1",
     "vue": "^2.6.6",
